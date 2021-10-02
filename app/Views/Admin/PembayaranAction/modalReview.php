@@ -1,0 +1,1 @@
+<img style="width: 100%;" class="bukti" src="/bukti-pembayaran/<?= $id; ?>"
