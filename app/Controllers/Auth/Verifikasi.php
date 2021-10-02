@@ -76,14 +76,7 @@ class Verifikasi extends BaseController
                 'password' => $user['password'],
                 'status_akun' => 'on'
             ]);
-            // Kirim email verifikasi
-            // $email = \Config\Services::email();
-            // $email->setFrom('bytecomp2021@gmail.com', 'Bytecomp 2021');
-            // $email->setTo($user['email']);
-            // $email->setSubject('Registrasi Sukses');
-            // $email->setMessage('Selamat akun anda sudah aktif!');
 
-            // $email->send();
             session()->setFlashdata('pesanRegis', '<div class="alert alert-info" role="alert">Akun anda berhasil terverifikasi!</div>');
             return redirect()->to('/login');
         }
