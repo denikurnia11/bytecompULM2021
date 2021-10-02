@@ -14,15 +14,15 @@
         <!-- Question/Answer -->
         <div>
             <div class="faq-question-q-box">Q.</div>
-            <h4 class="faq-question" data-wow-delay=".1s">What is Lorem Ipsum?</h4>
-            <p class="faq-answer mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            <h4 class="faq-question" data-wow-delay=".1s">Apakah seluruh anggota tim harus mendaftar melalui website?</h4>
+            <p class="faq-answer mb-4">Tidak perlu. Hanya ketua atau perwakilan tim saja yang melakukan pendaftaran melalui website Bytecomp</p>
         </div>
 
         <!-- Question/Answer -->
         <div>
             <div class="faq-question-q-box">Q.</div>
-            <h4 class="faq-question">Why use Lorem Ipsum?</h4>
-            <p class="faq-answer mb-4">Lorem ipsum dolor sit amet, in mea nonumes dissentias dissentiunt, pro te solet oratio iriure. Cu sit consetetur moderatius intellegam, ius decore accusamus te. Ne primis suavitate disputando nam. Mutat convenirete.</p>
+            <h4 class="faq-question">Apakah data peserta yang sudah disimpan saat pendaftaran dapat diubah kembali?</h4>
+            <p class="faq-answer mb-4">Bisa. Pilih menu "Daftar Lomba" -> "Lihat Riwayat Pendaftaran". Pada tabel data peserta terdapat kolom action yang berisi tombol untuk edit peserta.</p>
         </div>
 
         <!-- Question/Answer -->
