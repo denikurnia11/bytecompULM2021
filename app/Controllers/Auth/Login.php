@@ -41,8 +41,8 @@ class Login extends BaseController
 
         // Cek status akun
         if ($user['status_akun'] == 'off') {
-            session()->setFlashdata('pesan', 'Email belum terverifikasi');
-            return redirect()->to('auth/verifikasi');
+            session()->setFlashdata('pesan', 'Email belum terverifikasi. Silakan periksa email anda. </br>Bantuan? WA: 087840006063 (Deni Kurnia)');
+            return redirect()->to('/login');
         }
 
         // Jika benar, arahkan user masuk ke aplikasi 
