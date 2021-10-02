@@ -30,6 +30,26 @@ class Verifikasi extends BaseController
         return view('Auth/v_verifikasi', $data);
     }
 
+    public function confirm($id, $tokenInput)
+    {
+        $user = $this->userModel->find($id);
+        $token = md5($user['email']);
+        if (strcmp($token, $tokenInput) !== 0) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        } else {
+            $this->userModel->replace([
+                'id_user' => $id,
+                'email' => $user['email'],
+                'nama' => $user['nama'],
+                'password' => $user['password'],
+                'status_akun' => 'on'
+            ]);
+
+            session()->setFlashdata('pesanRegis', '<div class="alert alert-info" role="alert">Akun anda berhasil terverifikasi!</div>');
+            return redirect()->to('/login');
+        }
+    }
+
     // public function periksa()
     // {
     //     if ($this->request->isAJAX()) {
@@ -62,23 +82,5 @@ class Verifikasi extends BaseController
     //         throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
     //     }
     // }
-    public function confirm($id, $tokenInput)
-    {
-        $user = $this->userModel->find($id);
-        $token = md5($user['email']);
-        if (strcmp($token, $tokenInput) !== 0) {
-            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
-        } else {
-            $this->userModel->replace([
-                'id_user' => $id,
-                'email' => $user['email'],
-                'nama' => $user['nama'],
-                'password' => $user['password'],
-                'status_akun' => 'on'
-            ]);
 
-            session()->setFlashdata('pesanRegis', '<div class="alert alert-info" role="alert">Akun anda berhasil terverifikasi!</div>');
-            return redirect()->to('/login');
-        }
-    }
 }
