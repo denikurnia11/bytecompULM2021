@@ -152,12 +152,13 @@
                                 <div class=" dropdown-header noti-title">
                                     <h6 class="text-overflow m-0">Timeline !</h6>
                                 </div>
-
+                                <!-- <a href="#bannerformmodal" data-toggle="modal" data-target="#bannerformmodal">Load me</a> -->
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="<?= base_url(); ?>/user/dashboard/profile" class="dropdown-item notify-item">
                                     <i class="mdi mdi-account-circle me-1"></i>
                                     <span>My Account</span>
                                 </a>
+
 
                                 <!-- item-->
                                 <a href="<?= base_url() ?>/logout" class="dropdown-item notify-item">
@@ -336,6 +337,7 @@
                 $(document).ready(function() {
                     $('#basic-datatable').DataTable();
                     // $('.welcomeModal').modal('show');
+
                 });
             </script>
 

@@ -51,4 +51,9 @@ class Dashboard extends BaseController
         ];
         return view('User/v_faq', $data);
     }
+
+    public function profile()
+    {
+        return view('User/v_profile');
+    }
 }
