@@ -63,11 +63,110 @@
         <?php endforeach; ?>
     </tbody>
 </table>
+<!-- Modal -->
+<div class="view-modal"></div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script>
+    function readURL(input, id) {
+        id = id || '#blah';
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $(id)
+                    .attr('src', e.target.result)
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
     $(document).ready(function() {
         $('#basic-datatable').DataTable();
+        $(document).on("click", ".btnEdit", function() {
+            $.ajax({
+                url: "<?= base_url(); ?>/user/pendaftaran/editPeserta",
+                dataType: "json",
+                data: {
+                    id: $(this).attr('id')
+                },
+                beforeSend: function() {
+                    $('.iconEdit').removeClass('mdi mdi-square-edit-outline');
+                    $('.iconEdit').addClass('spinner-border spinner-border-sm');
+
+                },
+                complete: function() {
+                    $('.iconEdit').removeClass('spinner-border spinner-border-sm');
+                    $('.iconEdit').addClass('mdi mdi-square-edit-outline');
+                },
+                success: function(response) {
+                    $('.view-modal').html(response)
+                    $(".modal").modal("show");
+                }
+            })
+
+        })
+        $(document).on("submit", "#form-edit-peserta", function(e) {
+            e.preventDefault();
+
+            $.ajax({
+                url: '<?= base_url(); ?>/user/pendaftaran/updatePeserta',
+                type: 'post',
+                dataType: 'json',
+                data: new FormData(this),
+                contentType: false,
+                cache: false,
+                processData: false,
+                beforeSend: function() {
+                    $('.btnUpdate').hide();
+                    $('.btnLoading').css('display', 'block');
+                },
+                complete: function() {
+                    $('.btnUpdate').show();
+                    $('.btnLoading').css('display', 'none');
+                },
+                success: function(response) {
+                    if (response.error) {
+                        if (response.error.scan) {
+                            $('#inputKartu').addClass('is-invalid')
+                            $('.errorScan').html(response.error.scan)
+                        } else {
+                            $('#scan').removeClass('is-invalid')
+                            $('.inputKartu').html('')
+                        }
+                    } else {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Data Telah Terupdate.',
+                            showConfirmButton: false,
+                            timer: 0
+                        })
+                        $(".modal").modal("hide");
+                        setTimeout(() => {
+                            location.reload();
+                        }, 1500);
+                    }
+                },
+                error: function(jqXHR, exception) {
+                    var msg = '';
+                    if (jqXHR.status === 0) {
+                        msg = 'Not connect.\n Verify Network.';
+                    } else if (jqXHR.status == 404) {
+                        msg = 'Requested page not found. [404]';
+                    } else if (jqXHR.status == 500) {
+                        msg = 'Internal Server Error [500].';
+                    } else if (exception === 'parsererror') {
+                        msg = 'Requested JSON parse failed.';
+                    } else if (exception === 'timeout') {
+                        msg = 'Time out error.';
+                    } else if (exception === 'abort') {
+                        msg = 'Ajax request aborted.';
+                    } else {
+                        msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                    }
+                    alert(msg);
+                },
+            })
+        });
 
     });
 </script>

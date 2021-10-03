@@ -7,17 +7,19 @@ use App\Models\LombaModel;
 use App\Models\SekolahModel;
 use App\Models\PesertaModel;
 use App\Models\PendaftaranModel;
+use App\Models\UserModel;
 
 
 class Pendaftaran extends BaseController
 {
-    protected $lombaModel, $sekolahModel, $pesertaModel, $pendaftaranModel;
+    protected $userModel, $lombaModel, $sekolahModel, $pesertaModel, $pendaftaranModel;
     public function __construct()
     {
         $this->lombaModel = new LombaModel();
         $this->sekolahModel = new SekolahModel();
         $this->pesertaModel = new PesertaModel();
         $this->pendaftaranModel = new PendaftaranModel();
+        $this->userModel = new UserModel();
     }
     public function index()
     {
@@ -206,5 +208,74 @@ class Pendaftaran extends BaseController
         ];
         // dd($data);
         return view('User/v_riwayatpendaftaran', $data);
+    }
+
+    public function editPeserta()
+    {
+        if ($this->request->isAJAX()) {
+            $id = $this->request->getVar('id');
+            $data = [
+                'user' => $this->userModel->getColUser(),
+                'sekolah' => $this->sekolahModel->findAll(),
+                'peserta' => $this->pesertaModel->find($id)
+            ];
+            echo json_encode(view('User/PesertaAction/modalUpdate', $data));
+        } else {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
+    }
+
+    public function updatePeserta()
+    {
+        if ($this->request->isAJAX()) {
+            $validation = \Config\Services::validation();
+            if (!$this->validate([
+                'scan' => [
+                    'rules' => 'is_image[scan]|mime_in[scan,image/jpg,image/jpeg,image/png]|max_size[scan,1024]',
+                    'errors' => [
+                        'max_size' => 'Ukuran maksimal 1mb.',
+                        'is_image' => 'File harus berupa gambar.',
+                        'mime_in' => 'File harus berupa gambar.'
+                    ]
+                ]
+            ])) {
+                $msg = [
+                    'error' => [
+                        'scan' => $validation->getError('scan')
+                    ]
+                ];
+                echo json_encode($msg);
+            } else {
+                // Mengambil foto
+                $fileFotoLama = $this->request->getVar('scanLama');
+                $fileFotoBaru = $this->request->getFile('scan');
+                if ($fileFotoBaru->getError() == 4) {
+                    $namaFoto = $fileFotoLama;
+                } else {
+                    // Membuat nama random untuk fotonya
+                    $namaFoto = $fileFotoBaru->getRandomName();
+                    // Move ke folder public/kartu-pelajar
+                    $fileFotoBaru->move('kartu-pelajar', $namaFoto);
+                    unlink('kartu-pelajar/' . $fileFotoLama);
+                }
+                $data = [
+                    'id_peserta' => $this->request->getVar('id_peserta'),
+                    'id_user' => $this->request->getVar('id_user'),
+                    'id_sekolah' => $this->request->getVar('id_sekolah'),
+                    'nisn' => $this->request->getVar('nisn'),
+                    'jenis_peserta' => $this->request->getVar('jenis_peserta'),
+                    'nama_peserta' => $this->request->getVar('nama_peserta'),
+                    'no_telepon' => $this->request->getVar('no_telepon'),
+                    'jenis_kelamin' => $this->request->getVar('jenis_kelamin'),
+                    'tempat_lahir' => $this->request->getVar('tempat_lahir'),
+                    'tanggal_lahir' => $this->request->getVar('tanggal_lahir'),
+                    'scan' => $namaFoto,
+                ];
+                $this->pesertaModel->replace($data);
+                echo json_encode(['status' => true]);
+            }
+        } else {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
     }
 }
