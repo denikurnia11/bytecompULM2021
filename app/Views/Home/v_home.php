@@ -48,7 +48,7 @@
                         <a class="nav-link" href="#">Guidebook</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url(); ?>/login">Login</a>
+                        <a class="nav-link" style="border: 0px solid ;" href="<?= base_url(); ?>/login">Login</a>
                     </li>
                 </ul>
             </div>
@@ -149,10 +149,53 @@
                     <!-- <a href="#web-design" data-bs-toggle="modal">
                             <div class="card-lomba"></div>
                         </a> -->
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <img src="<?= base_url() ?>/assets/img/logo/Video_Kreatif.png" style="width: 279px; margin-top:41px;">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 6px;">
+                        <div class="col text-center">
+                            <span class="judul-lomba">Video Kreatif</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-5 mt-3 card-lomba"></div>
-                <div class="col-lg-3 col-md-5 mt-3 card-lomba"></div>
-                <div class="col-lg-3 col-md-5 mt-3 card-lomba"></div>
+                <div class="col-lg-3 col-md-5 mt-3 card-lomba">
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <img src="<?= base_url() ?>/assets/img/logo/Desaind_Poster.png" style="width: 279px; margin-top:27px;">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 26px;">
+                        <div class="col text-center">
+                            <span class="judul-lomba">Desain Poster</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-5 mt-3 card-lomba">
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <img src="<?= base_url() ?>/assets/img/logo/Desaind_Web.png" style="width: 279px; margin-top:41px; margin-right:7px;">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center" style="margin-top: 28px;">
+                            <span class="judul-lomba">Desain Website</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-5 mt-3 card-lomba">
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <img src="<?= base_url() ?>/assets/img/logo/Olimpiade.png" style="width: 279px; margin-top:47px; margin-left:7px;">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 34px;">
+                        <div class="col text-center">
+                            <span class="judul-lomba">Olimpiade Komputer</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -411,11 +454,11 @@
             <div class="row mt-4">
                 <h4>Deni Kurnia</h4>
                 <p class="text-muted">
-                    No. HP: 087840006063<br />ID Line : denikurnia007
+                    No. HP (WA): 087840006063
                 </p>
-                <h4>Deni Kurnia</h4>
+                <h4>Dwa Meizadewa</h4>
                 <p class="text-muted">
-                    No. HP: 087840006063<br />ID Line : denikurnia007
+                    No. HP (WA): 089691786852
                 </p>
             </div>
         </div>
