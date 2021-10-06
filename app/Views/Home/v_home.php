@@ -48,7 +48,7 @@
                         <a class="nav-link" href="#">Guidebook</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" " href=" <?= base_url(); ?>/login">Login</a>
+                        <a style="width: 83px;background: #58A391;border-radius: 360px;" class="nav-link" href=" <?= base_url(); ?>/login">Login</a>
                     </li>
                 </ul>
             </div>
