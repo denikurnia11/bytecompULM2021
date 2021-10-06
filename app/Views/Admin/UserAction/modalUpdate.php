@@ -23,13 +23,20 @@
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="text" id="password" class="form-control" name="password" autocomplete="off" required value="<?= $user['password']; ?>">
+                        <input type="text" id="password" class="form-control" name="password" autocomplete="off" required placeholder="Masukkan password baru/lama">
                     </div>
                     <div class="mb-3">
                         <label for="role" class="form-label">Role</label>
                         <select class="form-select" id="role" name="role">
                             <option value="admin" <?= ($user['role'] == 'admin') ? 'selected' : ''; ?>>Admin</option>
                             <option value="user" <?= ($user['role'] == 'user') ? 'selected' : ''; ?>>User</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="status_akun" class="form-label">Status Akun</label>
+                        <select class="form-select" id="status_akun" name="status_akun">
+                            <option value="on" <?= ($user['status_akun'] == 'on') ? 'selected' : ''; ?>>On</option>
+                            <option value="off" <?= ($user['status_akun'] == 'off') ? 'selected' : ''; ?>>Off</option>
                         </select>
                     </div>
                     <div class=" modal-footer">

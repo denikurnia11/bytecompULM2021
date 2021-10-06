@@ -29,6 +29,13 @@
                             <option value="admin">Admin</option>
                         </select>
                     </div>
+                    <div class="mb-3">
+                        <label for="status_akun" class="form-label">Status Akun</label>
+                        <select class="form-select" id="status_akun" name="status_akun">
+                            <option value="on">On</option>
+                            <option value="off">Off</option>
+                        </select>
+                    </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary btnSimpan">Tambah</button>
                         <button class="btn btn-primary mb-2 btnLoading" type="button" disabled style="display: none;">

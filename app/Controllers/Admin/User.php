@@ -71,6 +71,7 @@ class User extends BaseController
                     'email' => $this->request->getVar('email'),
                     'password' => md5($this->request->getVar('password')),
                     'role' => $this->request->getVar('role'),
+                    'status_akun' => $this->request->getVar('status_akun'),
                 ];
                 $this->userModel->insert($data);
                 echo json_encode(['status' => true]);
@@ -128,6 +129,7 @@ class User extends BaseController
                     'email' => $emailBaru,
                     'password' => md5($this->request->getVar('password')),
                     'role' => $this->request->getVar('role'),
+                    'status_akun' => $this->request->getVar('status_akun'),
                 ];
                 $this->userModel->replace($data);
                 echo json_encode(['status' => true]);
