@@ -97,7 +97,7 @@ class Register extends BaseController
         $email->setFrom('bytecomp2021@gmail.com', 'Bytecomp 2021');
         $email->setTo($this->request->getVar('email'));
         $email->setSubject('Verifikasi akun');
-        $email->setMessage('Terimakasih sudah mendaftar. Silakan klik tombol verifikasi dibawah ini.</br> <a class="btn btn-primary" href="' . base_url() . '/auth/verifikasi/confirm/' . $idUser['id_user'] . '/' . $token . '">Verifikasi</a>');
+        $email->setMessage('Terimakasih sudah mendaftar. Silakan klik link verifikasi berikut ini.</br> <a class="btn btn-primary" href="' . base_url() . '/auth/verifikasi/confirm/' . $idUser['id_user'] . '/' . $token . '">Verifikasi</a>');
 
         $email->send();
 
