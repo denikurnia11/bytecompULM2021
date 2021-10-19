@@ -74,7 +74,7 @@ class Pembayaran extends BaseController
                     'created_at' => date("Y-m-d"),
                     'bukti' => $namaFoto,
                 ];
-                dd($data);
+                // dd($data);
                 $this->pembayaranModel->insert($data);
                 echo json_encode(['status' => true]);
             }
