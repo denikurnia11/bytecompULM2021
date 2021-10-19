@@ -452,13 +452,13 @@
                 </div>
             </div>
             <div class="row mt-4">
-                <h4>Try Aditya Iswahyudi</h4>
+                <h4>Diaken Ramadhani Yoseph</h4>
                 <p class="text-muted">
-                    No. HP (WA): 081251869503
+                    No. HP (WA): 087830397806
                 </p>
-                <h4>Siti Roziana Azizah</h4>
+                <h4>Dwa Meizadewa</h4>
                 <p class="text-muted">
-                    No. HP (WA): 085640601034
+                    No. HP (WA): 089698786852
                 </p>
             </div>
         </div>
