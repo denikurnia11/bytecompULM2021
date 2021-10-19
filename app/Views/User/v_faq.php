@@ -26,18 +26,18 @@
         </div>
 
         <!-- Question/Answer -->
-        <div>
+        <!-- <div>
             <div class="faq-question-q-box">Q.</div>
             <h4 class="faq-question">How many variations exist?</h4>
             <p class="faq-answer mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-        </div>
+        </div> -->
 
         <!-- Question/Answer -->
-        <div>
+        <!-- <div>
             <div class="faq-question-q-box">Q.</div>
             <h4 class="faq-question" data-wow-delay=".1s">What is Lorem Ipsum?</h4>
             <p class="faq-answer mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-        </div>
+        </div> -->
 
     </div>
     <!--/col-md-5 -->
@@ -46,30 +46,31 @@
         <!-- Question/Answer -->
         <div>
             <div class="faq-question-q-box">Q.</div>
-            <h4 class="faq-question">Is safe use Lorem Ipsum?</h4>
-            <p class="faq-answer mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            <h4 class="faq-question">Kemana kalau mau membayar biaya pendaftaran?</h4>
+            <p class="faq-answer mb-4">No. Rek (BNI) : 1047009376 a/n Mita Azzahra Ramadhan. Dengan nominal sesuai dengan cabang lomba yang sudah ditentukan.</p>
         </div>
 
         <!-- Question/Answer -->
         <div>
             <div class="faq-question-q-box">Q.</div>
-            <h4 class="faq-question">When can be used?</h4>
-            <p class="faq-answer mb-4">Lorem ipsum dolor sit amet, in mea nonumes dissentias dissentiunt, pro te solet oratio iriure. Cu sit consetetur moderatius intellegam, ius decore accusamus te. Ne primis suavitate disputando nam. Mutat convenirete.</p>
+            <h4 class="faq-question">Bagaimana jika saya memiliki pertanyaan lainnya?</h4>
+            <p class="faq-answer mb-4">Silakan hubungi salah satu nomor WhatsApp berikut : Diaken Ramadhani Yoseph (087830397806), Dwa Meizadewa (089698786852). Atau klik "Contact Us" pada bawah kiri halaman ini.
+            </p>
         </div>
 
         <!-- Question/Answer -->
-        <div>
+        <!-- <div>
             <div class="faq-question-q-box">Q.</div>
             <h4 class="faq-question">License &amp; Copyright</h4>
             <p class="faq-answer mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-        </div>
+        </div> -->
 
         <!-- Question/Answer -->
-        <div>
+        <!-- <div>
             <div class="faq-question-q-box">Q.</div>
             <h4 class="faq-question">Is safe use Lorem Ipsum?</h4>
             <p class="faq-answer mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-        </div>
+        </div> -->
 
     </div>
     <!--/col-md-5-->

@@ -6,10 +6,18 @@
 
         <div class="card widget-flat">
             <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="text-muted fw-normal " title="Average Revenue">
+                            Upload Bukti Pembayaran
+                        </h4>
+                    </div>
+                    <div class="col">
+                        <h4 class="text-end text-muted fw-normal ">No. Rek (BNI) : 1047009376 a/n Mita Azzahra Ramadhan</h4>
+                    </div>
+                </div>
 
-                <h4 class="text-muted fw-normal mt-0 mb-3" title="Average Revenue">
-                    Upload Bukti Pembayaran
-                </h4>
+
 
                 <form action="" method="post" id="form-pembayaran" enctype="multipart/form-data">
                     <?= csrf_field(); ?>
