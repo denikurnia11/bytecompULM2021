@@ -1,1 +1,1 @@
-<img style="width: 100%;" class="scan" src="/kartu-pelajar/<?= $id; ?>"
+<img style="width: 100%;" class="scan" src="<?= base_url(); ?>/kartu-pelajar/<?= $id; ?>"
