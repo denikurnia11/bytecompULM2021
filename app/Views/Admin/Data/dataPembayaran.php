@@ -15,7 +15,7 @@
             <tr>
                 <td><?= $no++; ?></td>
                 <td><?= $row['nama']; ?></td>
-                <td class="text-center"> <a href="<?= base_url(); ?>/admin/pembayaran/review/<?= $row['bukti']; ?>" target="_blank"> <img style="width: 100px;" class="bukti" src="/bukti-pembayaran/<?= $row['bukti']; ?>"></a></td>
+                <td class="text-center"> <a href="<?= base_url(); ?>/admin/pembayaran/review/<?= $row['bukti']; ?>" target="_blank"> <img style="width: 100px;" class="bukti" src="<?= base_url(); ?>/bukti-pembayaran/<?= $row['bukti']; ?>"></a></td>
                 <td><?= $row['created_at']; ?></td>
                 <td class="text-uppercase"><span class="badge bg-<?= $row['status'] == 'berhasil' ? 'success' : ($row['status'] == 'pending' ? 'warning' : 'danger'); ?> rounded-pill"><?= $row['status']; ?></span></td>
                 <td class="text-center">

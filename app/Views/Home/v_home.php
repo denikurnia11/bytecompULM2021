@@ -75,7 +75,7 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-auto">
-                    <span class="prize">IDR 1.000.000.000</span>
+                    <span class="prize">IDR 12.000.000</span>
                 </div>
             </div>
             <div class="row justify-content-center">

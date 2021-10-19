@@ -75,11 +75,12 @@ class Register extends BaseController
             'email' => $emailUser,
             'nama' => $this->request->getVar('nama'),
             'password' => md5($password),
+            'status_akun' => 'on'
         ]);
 
-        $idUser = $this->userModel->where('email', $emailUser)->first();
-        // Token verifikasi
-        $token = md5($emailUser);
+        // $idUser = $this->userModel->where('email', $emailUser)->first();
+        // // Token verifikasi
+        // $token = md5($emailUser);
 
         // $random_string = "";
         // $valid_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -93,16 +94,16 @@ class Register extends BaseController
 
 
         // Kirim email verifikasi
-        $email = \Config\Services::email();
-        $email->setFrom('bytecomp2021@gmail.com', 'Bytecomp 2021');
-        $email->setTo($this->request->getVar('email'));
-        $email->setSubject('Verifikasi akun');
-        $email->setMessage('Terimakasih sudah mendaftar. Silakan klik link verifikasi berikut ini.</br> <a class="btn btn-primary" href="' . base_url() . '/auth/verifikasi/confirm/' . $idUser['id_user'] . '/' . $token . '">Verifikasi</a>');
+        // $email = \Config\Services::email();
+        // $email->setFrom('bytecomp2021@gmail.com', 'Bytecomp 2021');
+        // $email->setTo($this->request->getVar('email'));
+        // $email->setSubject('Verifikasi akun');
+        // $email->setMessage('Terimakasih sudah mendaftar. Silakan klik link verifikasi berikut ini.</br> <a class="btn btn-primary" href="' . base_url() . '/auth/verifikasi/confirm/' . $idUser['id_user'] . '/' . $token . '">Verifikasi</a>');
 
-        $email->send();
+        // $email->send();
 
 
-        session()->setFlashdata('pesanRegis', '<div class="alert alert-info" role="alert">Silakan cek email anda untuk verifikasi.</div>');
+        session()->setFlashdata('pesanRegis', '<div class="alert alert-info" role="alert">Akun berhasil dibuat.</div>');
         return redirect()->to('/login');
     }
 }
