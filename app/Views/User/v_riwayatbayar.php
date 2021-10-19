@@ -15,7 +15,7 @@
         <tr>
             <td>1</td>
             <td><?= $pembayaran['nama']; ?></td>
-            <td class="text-center"> <img style="width: 100px;" class="bukti" src="/bukti-pembayaran/<?= $pembayaran['bukti']; ?>"></td>
+            <td class="text-center"> <img style="width: 100px;" class="bukti" src="<?= base_url(); ?>/bukti-pembayaran/<?= $pembayaran['bukti']; ?>"></td>
             <td><?= $pembayaran['created_at']; ?></td>
             <td class="text-uppercase"><span class="badge bg-<?= $pembayaran['status'] == 'berhasil' ? 'success' : ($pembayaran['status'] == 'pending' ? 'warning' : 'danger'); ?> rounded-pill"><?= $pembayaran['status']; ?></span></td>
         </tr>

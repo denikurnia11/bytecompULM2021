@@ -55,7 +55,7 @@
                 <td><?= $row['jenis_kelamin']; ?></td>
                 <td><?= $row['tempat_lahir']; ?></td>
                 <td><?= $row['tanggal_lahir']; ?></td>
-                <td class="text-center"> <img style="width: 100px;" class="scan" src="/kartu-pelajar/<?= $row['scan']; ?>"></td>
+                <td class="text-center"> <img style="width: 100px;" class="scan" src="<?= base_url(); ?>/kartu-pelajar/<?= $row['scan']; ?>"></td>
                 <td class="text-center">
                     <button type="button" id="<?= $row['id_peserta']; ?>" class="btnEdit btn btn-primary me-1"><i class="mdi mdi-square-edit-outline iconEdit"></i>
                 </td>
